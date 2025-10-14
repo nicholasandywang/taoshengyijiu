@@ -82,7 +82,7 @@ sniffer:
   override-destination: true
   sniff: # TLS 和 QUIC 默认如果不配置 ports 默认嗅探 443
     QUIC:
-      ports: [ 443 ]
+      ports: [443, 8443]
 
     TLS:
       ports: [443 ,8443]
@@ -185,7 +185,7 @@ dns:
     - https://119.29.29.29/dns-query
     - https://dns.alidns.com/dns-query
     - https://doh.pub/dns-query
-    #- tls://dot.pub:853
+    - tls://dot.pub:853
   # 主用DNS（强制走代理）
   nameserver:
     #- 202.97.224.68
@@ -210,11 +210,11 @@ dns:
 
   # 备用DNS配置   
   fallback: 
-      - tls://1.0.0.1:853
       - https://cloudflare-dns.com/dns-query
       - https://dns.google/dns-query
-      - tls://dns.quad9.net:853
       - https://doh.opendns.com/dns-query
+      - tls://dns.quad9.net:853
+      - tls://1.0.0.1:853
       
    # 备用DNS配置
   fallback-filter:
@@ -330,3 +330,4 @@ rule-providers:
   telegram_ip: { <<: *ip, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/telegram.mrs"}
   netflix_ip: { <<: *ip, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/netflix.mrs"}
   apple_ip: {<<: *ip, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo-lite/geoip/apple.mrs"}
+
