@@ -89,9 +89,9 @@ sniffer:
       override-destination: true
     # 默认嗅探 80
     HTTP:
-      ports: [80, 8080-8880]
+      ports: [80, 8080, 8880]
       # 是否使用嗅探结果作为实际访问
-      override-destination: false
+      override-destination: true
   force-domain:
 #  - '+' # Force all domain to use sniffer
     - "+.v2ex.com"
@@ -330,6 +330,7 @@ rule-providers:
   telegram_ip: { <<: *ip, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/telegram.mrs"}
   netflix_ip: { <<: *ip, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/netflix.mrs"}
   apple_ip: {<<: *ip, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo-lite/geoip/apple.mrs"}
+
 
 
 
