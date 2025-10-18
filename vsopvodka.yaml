@@ -202,12 +202,12 @@ dns:
     #'www.baidu.com': '202.97.224.68'
     #'+.internal.crop.com': '10.0.0.1'
     #"_vlmcs._tcp.lan": '127.0.0.1:53'
-    "rule-set:private_domain,cn_domain,apple_domain": [202.97.224.69, https://223.5.5.5/dns-query, https://119.29.29.29/dns-query, https://doh.pub/dns-query] 
-    "geosite:cn,private": [202.97.224.69, https://223.5.5.5/dns-query, https://119.29.29.29/dns-query, https://doh.pub/dns-query]
+    "rule-set:private_domain,cn_domain,apple_domain": [223.5.5.5, 119.29.29.29, https://223.5.5.5/dns-query, https://dns.alidns.com/dns-query, https://doh.pub/dns-query] 
+    "geosite:cn,private": [223.5.5.5, 119.29.29.29, https://223.5.5.5/dns-query, https://dns.alidns.com/dns-query, https://doh.pub/dns-query]
     "geosite:google": [https://dns.google/dns-query, tls://8.8.4.4:853, tls://8.8.8.8:853, https://1.0.0.1/dns-query]
-    "geosite:category-games@cn": [https://doh.pub/dns-query, 223.5.5.5, 119.29.29.29]
-    "geosite:geolocation-!cn": [https://dns.google/dns-query,  https://cloudflare-dns.com/dns-query, tls://8.8.8.8:853, tls://1.1.1.1:853]
-
+    "geosite:category-games@cn": [https://doh.pub/dns-query, https://dns.alidns.com/dns-query, 223.5.5.5, 119.29.29.29]
+    "geosite:geolocation-!cn": [https://dns.google/dns-query, https://cloudflare-dns.com/dns-query, tls://8.8.4.4:853, tls://1.0.0.1:853]
+    
   # 备用DNS配置   
   fallback: 
       - https://cloudflare-dns.com/dns-query
@@ -330,6 +330,7 @@ rule-providers:
   telegram_ip: { <<: *ip, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/telegram.mrs"}
   netflix_ip: { <<: *ip, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/netflix.mrs"}
   apple_ip: {<<: *ip, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo-lite/geoip/apple.mrs"}
+
 
 
 
