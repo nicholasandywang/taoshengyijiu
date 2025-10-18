@@ -258,7 +258,7 @@ proxy-groups:
  
   - {name: 🐟 漏网之鱼, type: select, proxies: [♻️ 自动选择, 🇺🇲 美国节点, 🇪🇺 欧洲节点, 🌍 亚洲节点, 🇨🇳 中国节点, 拦截, 直连]}
   
-  - {name: ♻️ 自动选择, type: smart, strategy: "round-robin", include-all: true ,url: "https://www.gstatic.com/generate_204" ,tolerance: 50, interval: 180, exclude-filter: "(?i)(直连)|(中国)" , regex-engine: "re2", lazy: true}
+  - {name: ♻️ 自动选择, type: smart, strategy: "round-robin", include-all: true ,url: "https://www.gstatic.com/generate_204" ,tolerance: 50, interval: 180, exclude-filter: "(?i)直连|中国|香港|新加坡" , regex-engine: "re2", lazy: true}
   
   - {name: 🌐 全部节点, type: fallback, include-all: true, filter: "^(?!(直连)).*$"}  
   
@@ -328,6 +328,7 @@ rule-providers:
   telegram_ip: { <<: *ip, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/telegram.mrs"}
   netflix_ip: { <<: *ip, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/netflix.mrs"}
   apple_ip: {<<: *ip, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo-lite/geoip/apple.mrs"}
+
 
 
 
