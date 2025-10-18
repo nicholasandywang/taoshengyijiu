@@ -11,7 +11,7 @@ proxy-providers:
       url: https://www.gstatic.com/generate_204
       interval: 300
     proxy: 直连
-    exclude-filter: "(?i)(过期时间)|(剩余流量)|(TG群)|(官网)"
+    exclude-filter: "(?i)(过期时间)|(剩余流量)|(TG群)|(官网)|(未知)"
   备:
     url: "https://gh-proxy.com/https://raw.githubusercontent.com/Pawdroid/Free-servers/main/sub"
     #url: ""
@@ -22,7 +22,7 @@ proxy-providers:
       url: https://www.gstatic.com/generate_204
       interval: 300
     proxy: 直连
-    exclude-filter: "(?i)(过期时间)|(剩余流量)|(TG群)|(官网)"
+    exclude-filter: "(?i)(过期时间)|(剩余流量)|(TG群)|(官网)|(未知)"
     
 # 节点信息
 proxies:
@@ -328,6 +328,7 @@ rule-providers:
   telegram_ip: { <<: *ip, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/telegram.mrs"}
   netflix_ip: { <<: *ip, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/netflix.mrs"}
   apple_ip: {<<: *ip, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo-lite/geoip/apple.mrs"}
+
 
 
 
